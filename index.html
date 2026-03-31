@@ -51,7 +51,7 @@
         /* MASTER SETTINGS: Branding */
         .brand-text { font-size: 32px; line-height: 1; font-weight: 700; font-family: 'Noto Serif', serif; }
         
-        /* ADJUSTED TM POSITION: Sejajar atas dengan huruf INVILA */
+        /* FIXED TM POSITION */
         .brand-tm { 
             font-size: 12px; 
             vertical-align: top; 
@@ -144,53 +144,9 @@
         
         .comparison-table td, .comparison-table th { border-bottom: 1px solid rgba(255,255,255,0.05); padding: 1.25rem 1rem; }
 
-        /* Infinite Marquee Styling - Adjusted for Spacing */
-        .marquee-container {
-            width: 100%;
-            overflow: hidden;
-            position: relative;
-            display: flex;
-        }
-        
-        .marquee-content {
-            display: flex;
-            width: max-content;
-            animation: scroll 60s linear infinite; 
-            flex-wrap: nowrap;
-        }
-
-        .marquee-content:hover {
-            animation-play-state: paused;
-        }
-
-        @keyframes scroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-
-        .client-logo { 
-            filter: grayscale(100%); 
-            opacity: 0.5; 
-            transition: all 0.4s ease; 
-            max-height: 40px; 
-            width: auto; 
-            margin: 0 80px; 
-            flex-shrink: 0;
-            display: block;
-        }
-        
-        .client-logo:hover { 
-            filter: grayscale(0%); 
-            opacity: 1; 
-            transform: scale(1.1); 
-        }
-
-        @media (min-width: 1024px) {
-            .client-logo { 
-                max-height: 50px; 
-                margin: 0 100px; 
-            }
-        }
+        /* Client Logo Styling */
+        .client-logo { filter: grayscale(100%); opacity: 0.6; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); max-height: 45px; width: auto; object-fit: contain; }
+        .client-logo:hover { filter: grayscale(0%); opacity: 1; transform: scale(1.1); }
     </style>
 </head>
 <body class="bg-offWhite font-sans text-slate-900 leading-normal overflow-x-hidden">
@@ -269,40 +225,110 @@
             </div>
         </section>
 
-        <!-- INFINITE LOOP CLIENT LOGO SECTION - IMPROVED SPACING -->
-        <section class="py-12 border-y border-slate-100 bg-white">
-            <div class="max-w-[1200px] mx-auto px-4 overflow-hidden">
+        <!-- CLIENT LOGO SECTION (GRID VERSION) -->
+        <section class="py-12 border-y border-slate-100 bg-white overflow-hidden">
+            <div class="max-w-[1200px] mx-auto px-4">
                 <p class="text-center text-[10px] font-black text-slate-400 uppercase tracking-[0.4em] mb-12 italic">Dipercaya Oleh Pemimpin Industri & Mitra Strategis</p>
-                
-                <div class="marquee-container">
-                    <div class="marquee-content" id="marquee-inner">
-                        <!-- Group 1 -->
-                        <div class="flex items-center flex-nowrap">
-                            <img src="kiw.png" alt="KIW" class="client-logo">
-                            <img src="petrokimia-gresik.png" alt="Petrokimia Gresik" class="client-logo">
-                            <img src="united-tractors.png" alt="United Tractors" class="client-logo">
-                            <img src="wika.png" alt="WIKA" class="client-logo">
-                            <img src="kievit.png" alt="Kievit" class="client-logo">
-                            <img src="tirtanadi.png" alt="Tirtanadi" class="client-logo">
-                            <img src="tirta-asasta-depok.png" alt="Tirta Asasta" class="client-logo">
-                            <img src="patria-maritim-perkasa.png" alt="Patria Maritim Perkasa" class="client-logo">
-                            <img src="cemerlang-samudra-kontrindo.png" alt="Cemerlang Samudra Kontrindo" class="client-logo">
-                            <img src="dinkes depok.png" alt="Dinkes Depok" class="client-logo">
-                        </div>
-                        <!-- Group 2 (Duplicate for seamless loop) -->
-                        <div class="flex items-center flex-nowrap">
-                            <img src="kiw.png" alt="KIW" class="client-logo">
-                            <img src="petrokimia-gresik.png" alt="Petrokimia Gresik" class="client-logo">
-                            <img src="united-tractors.png" alt="United Tractors" class="client-logo">
-                            <img src="wika.png" alt="WIKA" class="client-logo">
-                            <img src="kievit.png" alt="Kievit" class="client-logo">
-                            <img src="tirtanadi.png" alt="Tirtanadi" class="client-logo">
-                            <img src="tirta-asasta-depok.png" alt="Tirta Asasta" class="client-logo">
-                            <img src="patria-maritim-perkasa.png" alt="Patria Maritim Perkasa" class="client-logo">
-                            <img src="cemerlang-samudra-kontrindo.png" alt="Cemerlang Samudra Kontrindo" class="client-logo">
-                            <img src="dinkes depok.png" alt="Dinkes Depok" class="client-logo">
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-y-12 gap-x-8 items-center justify-items-center">
+                    <img src="kiw.png" alt="KIW" class="client-logo">
+                    <img src="petrokimia-gresik.png" alt="Petrokimia Gresik" class="client-logo">
+                    <img src="united-tractors.png" alt="United Tractors" class="client-logo">
+                    <img src="wika.png" alt="WIKA" class="client-logo">
+                    <img src="kievit.png" alt="Kievit" class="client-logo">
+                    <img src="tirtanadi.png" alt="Tirtanadi" class="client-logo">
+                    <img src="tirta-asasta-depok.png" alt="Tirta Asasta" class="client-logo">
+                    <img src="patria-maritim-perkasa.png" alt="Patria Maritim Perkasa" class="client-logo">
+                    <img src="cemerlang-samudra-kontrindo.png" alt="Cemerlang Samudra Kontrindo" class="client-logo">
+                    <img src="dinkes depok.png" alt="Dinkes Depok" class="client-logo">
+                </div>
+            </div>
+        </section>
+
+        <!-- PROOF OF SCALE SECTION (New Trust-Building Section) -->
+        <section class="py-20 lg:py-32 bg-ink text-white relative overflow-hidden">
+            <!-- Background Decorative Elements -->
+            <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-royalBlue/10 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
+            <div class="absolute bottom-0 left-0 w-[300px] h-[300px] bg-blue-500/5 blur-[100px] rounded-full translate-y-1/3 -translate-x-1/4 pointer-events-none"></div>
+
+            <div class="max-w-[1200px] mx-auto px-4 relative z-10">
+                <div class="text-center mb-16 lg:mb-24">
+                    <span class="kicker text-royalBlue mb-6">Verified Industrial Performance</span>
+                    <h2 class="headline text-white uppercase mb-8 leading-tight tracking-tight max-w-4xl mx-auto">
+                        Akumulasi Kapasitas Terpasang yang <br class="hidden lg:block"> Telah Dibangun Invila™
+                    </h2>
+                    <p class="text-slate-400 text-sm lg:text-lg max-w-3xl mx-auto leading-relaxed">
+                        Lebih dari <span class="text-white font-black italic">79.154.776 m³/tahun</span> kapasitas terpasang pada berbagai implementasi industri dan utilitas. Angka ini menunjukkan pengalaman nyata dalam menangani kebutuhan air bersih, air proses, dan sistem pendukung operasional skala kecil sampai besar, publik dan pabrik.
+                    </p>
+                </div>
+
+                <!-- Proof of Scale Dashboard -->
+                <div class="grid lg:grid-cols-12 gap-8 items-center mb-16 lg:mb-24">
+                    <div class="lg:col-span-7">
+                        <div class="p-8 lg:p-12 rounded-[2.5rem] bg-gradient-to-br from-white/10 to-transparent border border-white/10 backdrop-blur-sm group hover:border-royalBlue/50 transition-all duration-700 shadow-2xl">
+                            <div class="flex justify-between items-start mb-8">
+                                <span class="text-[10px] font-black uppercase tracking-[0.4em] text-slate-500">Global Cumulative Volume</span>
+                                <div class="w-10 h-10 bg-royalBlue/20 rounded-full flex items-center justify-center">
+                                    <i data-lucide="trending-up" class="w-5 h-5 text-royalBlue"></i>
+                                </div>
+                            </div>
+                            <div class="flex items-baseline gap-2 mb-6">
+                                <h3 class="text-5xl lg:text-8xl font-black italic tracking-tighter text-white">79.154.776</h3>
+                                <span class="text-xl lg:text-3xl font-serif italic text-royalBlue font-bold">m³/thn</span>
+                            </div>
+                            <div class="h-2 w-full bg-white/5 rounded-full overflow-hidden">
+                                <div class="h-full bg-royalBlue w-[88%] shadow-[0_0_20px_rgba(34,87,216,0.5)]"></div>
+                            </div>
                         </div>
                     </div>
+                    <div class="lg:col-span-5 space-y-4">
+                        <!-- Individual Project Metric Cards -->
+                        <div class="p-6 rounded-2xl bg-white/5 border border-white/10 flex items-center gap-6 hover:bg-white/10 transition-colors">
+                            <div class="w-12 h-12 bg-royalBlue/10 rounded-xl flex items-center justify-center text-royalBlue">
+                                <i data-lucide="factory" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-[11px] font-black uppercase tracking-widest text-white mb-1">Industrial Processing</h4>
+                                <p class="text-[10px] text-slate-500 font-bold uppercase italic">F&B, Pharma, & Textile Segments</p>
+                            </div>
+                        </div>
+                        <div class="p-6 rounded-2xl bg-white/5 border border-white/10 flex items-center gap-6 hover:bg-white/10 transition-colors">
+                            <div class="w-12 h-12 bg-royalBlue/10 rounded-xl flex items-center justify-center text-royalBlue">
+                                <i data-lucide="building-2" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-[11px] font-black uppercase tracking-widest text-white mb-1">Public Utility Scale</h4>
+                                <p class="text-[10px] text-slate-500 font-bold uppercase italic">Municipal & Infrastructure Grade</p>
+                            </div>
+                        </div>
+                        <div class="p-6 rounded-2xl bg-white/5 border border-white/10 flex items-center gap-6 hover:bg-white/10 transition-colors">
+                            <div class="w-12 h-12 bg-royalBlue/10 rounded-xl flex items-center justify-center text-royalBlue">
+                                <i data-lucide="history" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-[11px] font-black uppercase tracking-widest text-white mb-1">Legacy Stability</h4>
+                                <p class="text-[10px] text-slate-500 font-bold uppercase italic">10+ Years Operational Lifespan</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Call to Action Area -->
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-6 mb-12">
+                    <!-- CTA Utama: WhatsApp -->
+                    <a href="https://wa.me/6285219493322" target="_blank" class="w-full sm:w-auto bg-royalBlue text-white px-12 py-6 rounded-full font-black text-xs uppercase tracking-[0.25em] shadow-[0_15px_35px_rgba(34,87,216,0.3)] hover:scale-105 active:scale-95 transition-all text-center flex items-center justify-center gap-3">
+                        <i data-lucide="check-circle" class="w-4 h-4"></i> Jadwalkan Site Audit
+                    </a>
+                    <!-- CTA Sekunder: Portofolio Subdomain -->
+                    <a href="https://ccpi.zerocapexwaterinfrastructure.com/" target="_blank" class="w-full sm:w-auto border border-white/20 text-white px-12 py-6 rounded-full font-black text-xs uppercase tracking-[0.25em] hover:bg-white hover:text-ink hover:border-white active:scale-95 transition-all text-center">
+                        Lihat Portofolio Invila TM Terpasang
+                    </a>
+                </div>
+
+                <!-- Micro Note -->
+                <div class="max-w-3xl mx-auto text-center border-t border-white/5 pt-12">
+                    <p class="text-[9px] lg:text-[10px] uppercase tracking-[0.3em] font-bold text-slate-500 italic leading-relaxed">
+                        Data akumulatif dari proyek terpilih. Seluruh kapasitas terpasang tetap terjaga secara optimal, termasuk pada instalasi yang telah beroperasi lebih dari 5 hingga 10 tahun.
+                    </p>
                 </div>
             </div>
         </section>
